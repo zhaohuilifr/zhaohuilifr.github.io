@@ -1,0 +1,390 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>fluorMODleaf模型辐射传输理论介绍 | Les aventures du Rhine en France</title><meta name="author" content="Rhine"><meta name="copyright" content="Rhine"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="FluorMODleaf模型 本文主要参考文献为：  Pedros R,Goulas Y,Jacquemoud S,Louis J, Moya I (2010) FluorMODleaf:A new leaf fluorescence emission model based on the PROSPECT model.Remote Sens.Environ.114:155-167. doi:10">
+<meta property="og:type" content="article">
+<meta property="og:title" content="fluorMODleaf模型辐射传输理论介绍">
+<meta property="og:url" content="http://zhaohuilifr.github.io/post/a600d4c3.html">
+<meta property="og:site_name" content="Les aventures du Rhine en France">
+<meta property="og:description" content="FluorMODleaf模型 本文主要参考文献为：  Pedros R,Goulas Y,Jacquemoud S,Louis J, Moya I (2010) FluorMODleaf:A new leaf fluorescence emission model based on the PROSPECT model.Remote Sens.Environ.114:155-167. doi:10">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zhaohuilifr.github.io/img/avatar.jpg">
+<meta property="article:published_time" content="2025-04-08T15:55:55.000Z">
+<meta property="article:modified_time" content="2025-04-08T21:13:53.362Z">
+<meta property="article:author" content="Rhine">
+<meta property="article:tag" content="model">
+<meta property="article:tag" content="radiative transfer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zhaohuilifr.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/logo_site.jpeg"><link rel="canonical" href="http://zhaohuilifr.github.io/post/a600d4c3.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'fluorMODleaf模型辐射传输理论介绍',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-04-08 23:13:53'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/food/"><i class="fa-fw fas fa-utensils"></i><span> 美食</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Les aventures du Rhine en France"><img class="site-icon" src="/img/logo_site.jpeg"/><span class="site-name">Les aventures du Rhine en France</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/food/"><i class="fa-fw fas fa-utensils"></i><span> 美食</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">fluorMODleaf模型辐射传输理论介绍</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-04-08T15:55:55.000Z" title="发表于 2025-04-08 17:55:55">2025-04-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-08T21:13:53.362Z" title="更新于 2025-04-08 23:13:53">2025-04-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MODEL/">MODEL</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/MODEL/fluorMODleaf/">fluorMODleaf</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="fluorMODleaf模型辐射传输理论介绍"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="FluorMODleaf模型"><a href="#FluorMODleaf模型" class="headerlink" title="FluorMODleaf模型"></a>FluorMODleaf模型</h1><blockquote>
+<p>本文主要参考文献为：</p>
+<ul>
+<li>Pedros R,Goulas Y,Jacquemoud S,Louis J, Moya I (2010) FluorMODleaf:A new leaf fluorescence emission model based on the PROSPECT model.Remote Sens.Environ.114:155-167. doi:10.1016/j.rse.2009.08.019.</li>
+<li>Pedros R,Moya I,Goulas Y,Jacquemoud S (2008) Chlorophyll fluorescence emission spectrum inside a leaf.Photochemical&amp; Photobiological Sciences 7:498-502. doi: 10.1039/b719506k.</li>
+</ul>
+</blockquote>
+<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><p>FluorMODleaf是一个常用的基于PROSPECT模型的叶片尺度叶绿素荧光模拟模型。FluorMODleaf主要用于模拟植物叶片反射率、透射率以及上行和下行叶绿素荧光。模型考虑了叶片内部多个吸收和散射的基本层，通过积分无限薄层的荧光发射来计算整体荧光。输入变量包括PROSPECT-5的参数（如叶结构参数N、总叶绿素含量Cab、总类胡萝卜素含量Ccx、等效水厚度Cw和干物质含量Cm（或单位面积的叶质量LMA）等），以及新增的参数（如PSI和PSII的相对吸收截面比$\sigma<em>{II}/\sigma</em>{I}$、PSI和PSII的荧光量子效率$\tau<em>{I}$和$\tau</em>{II}$等）。</p>
+<p>表1 FluorMODleaf模型的输入参数<br>| 变量名      | 符号 | 取值范围      | 标准值 | 单位 |<br>| —————- | —————- | —————- | —————- | —————- |<br>| 叶结构参数      | N       | 1-2.5       |1.5 | -|<br>| 叶绿素含量   | $C<em>{ab}$        | 0.4–76.8       |33.0 | $\mu g\space cm^{-2}$|<br>| 总类胡萝卜素含量   | $C</em>{cx}$        | 0–25.3       |8.0 | $\mu g\space cm^{-2}$|<br>| 水分含量   | $C<em>{w}$        | 0.0044–0.0340       |0.01 | cm|<br>| 干物质含量   | $C</em>{m}$        | 0.0017–0.0331       |0.005 | $g\space cm^{-2}$|<br>| 相对吸收截面比   | $\sigma<em>{II}/\sigma</em>{I}$        | 1.0–2.4       |1.0 | -|<br>| PSI荧光寿命   | $\tau<em>{I}$        | 0.034–0.1       |0.035 | ns|<br>| PSII荧光寿命   | $\tau</em>{II}$        | 0.3–2.0       |0.5 | ns| </p>
+<h2 id="2-模型原理"><a href="#2-模型原理" class="headerlink" title="2. 模型原理"></a>2. 模型原理</h2><p>模型假设一个叶片由N个水平的具有粗糙表面的均匀吸收单元（plate）组成，入射光在每个吸收单元表面产生各向同性的扩散。每个吸收单元内部是可产生荧光的具有X层的介质。</p>
+<h3 id="2-1-单个单元的荧光"><a href="#2-1-单个单元的荧光" class="headerlink" title="2.1 单个单元的荧光"></a>2.1 单个单元的荧光</h3><h4 id="2-1-1-计算单层吸收的辐射通量"><a href="#2-1-1-计算单层吸收的辐射通量" class="headerlink" title="2.1.1 计算单层吸收的辐射通量"></a>2.1.1 计算单层吸收的辐射通量</h4><p>假设有一个吸收单元被入射光$i<em>{0}$ （可以是直射、散射或者混合光）照射，由于吸收单元表面粗糙，在介质界面反射或透射的所有通量都是各向同性的。在图1中，这些通量被指定为$i</em>{1}$、$j<em>{1}$、$i</em>{3}$、和$j_{3}$。</p>
+<!-- ![图1](image.png) -->
+<div align="center">
+    <img src="https://raw.githubusercontent.com/zhaohuilifr/Picshub/main/images/fluorMODleaf/image.png" alt="图1" width="50%">
+    <p>图1</p>
+</div>
+
+<p>$\tau(x)$是穿过厚度为x的截面的各向同性光的内部介质的透射率。</p>
+<p>在吸收单元内定义了一个无穷小的水平层$L<em>{x}$，位于深度x处，其中x是指距吸收单元顶部的距离。层$L</em>{x}$接收从板的顶部$(x=0)$向下行进的通量$i(x)$和从底部$(x=1)$向上行进的通量$j(x)$。深度$x$处的荧光发射$df(\lambda <em>{ex}, \lambda </em>{em}, x)$与无穷小层$L_{x}$吸收的光子量成正比，可以写为:</p>
+<script type="math/tex; mode=display">
+df(\lambda _{ex}, \lambda _{em}, x) = \Phi (\lambda _{ex}, \lambda _{em})da(\lambda _{ex}, x) \tag{1}</script><p>其中，$\lambda <em>{ex}$和$\lambda </em>{em}$分别是荧光激发（excitation）和释放（emission）波长，$\Phi (\lambda <em>{ex}, \lambda </em>{em})$是荧光量子效率函数，$da(\lambda <em>{ex}, x)$是吸收的辐射通量。$\Phi (\lambda </em>{ex}, \lambda <em>{em})$可以定义为介质在$\lambda </em>{ex}$处吸收的一个光子在$\lambda <em>{em}$处发射的概率。吸收通量$da(\lambda </em>{ex}, x)$与穿过层$L_{x}$的通量变化有关，因此可以通过推导相对于x的传播通量$i(x)$和$j(x)$来计算：</p>
+<script type="math/tex; mode=display">
+da(\lambda _{ex}) = (i(x)-i(x+dx))+(j(x+dx)-j(x)) = (-\frac{di}{dx}(x)+\frac{dj}{dx}(x))dx \tag{2}</script><p>根据图1，辐射通量在单元内的传输可以表达为以下线性方程：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\left\{
+\begin{aligned}
+i_{1} &= t_{12}i_{0} + r_{21}i_{2}
+\\
+i_{2} &= \tau(1)i_{1}
+\\
+i_{3} &= t_{21}i_{2}
+\\
+i(x) &= \tau(x)i_{1}
+
+\end{aligned}
+\right.
+\tag{3}
+\end{equation}</script><script type="math/tex; mode=display">
+\begin{equation}
+\left\{
+\begin{aligned}
+j_{1} &= r_{21}i_{2}
+\\
+j_{2} &= \tau(1)j_{1}
+\\
+j_{3} &= t_{21}j_{2} + r_{12}i_{0}
+\\
+j(x) &= \tau(1-x)j_{1}
+
+\end{aligned}
+\right.
+\tag{4}
+\end{equation}</script><p>其中，$r<em>{12}$和$t</em>{12}$分别为从空气层（medium 1）到介质层（medium 2）的反射率和透射率。相似地，$r<em>{21}$和$t</em>{21}$分别为从介质层（medium 2）到空气层（medium 1）的反射率和透射率。<br>反射率$r<em>{12}$可以通过PROSPECT模型给出，因此，在<strong>不考虑叶片表层吸收</strong>的情况下，$t</em>{12}=1−r<em>{12}$，而$t</em>{21} = t_{12}/n^2$。<br>$\tau(x)$根据比尔定律，对单位角度内的透过率进行半球积分得到：</p>
+<script type="math/tex; mode=display">
+\tau(x) = \frac{\int_0^{2\pi}d\psi\int_0^{\pi/2}\tau(\theta,x)cos\theta sin\theta d\theta}{\int_0^{2\pi}d\psi\int_0^{\pi/2}cos\theta sin\theta d\theta} = (1-kx)exp(-kx) + k^2x^2\Tau(0, kx)
+
+\tag{5}</script><p>其中，$\theta$和$\psi$是入射辐射通量的天顶角和方位角。$k$是叶片内部介质的吸收系数。$\Tau(0, kx)$是“上”不完全伽马函数。解方程(3)和(4)可以得到$i(x)$和$j(x)$如下：</p>
+<script type="math/tex; mode=display">
+i(x) = \frac{i_0t_{12}\tau(x)}{1-r^2_{21}\tau(1)^2}
+\tag{6}</script><script type="math/tex; mode=display">
+j(x) = \frac{i_0t_{12}r_{21}\tau(1)\tau(1-x)}{1-r^2_{21}\tau(1)^2}
+\tag{7}</script><p>因此，方程(6)和(7)对$x$求导即可得到方程(2)所需的$\frac{di}{dx}(x)和\frac{dj}{dx}(x)$。同时$\tau(x)$的一阶导数为：</p>
+<script type="math/tex; mode=display">
+\frac{d\tau}{dx}(x) = 2k^2x\Tau(0, kx) - 2kexp(-kx)
+\tag{8}</script><h3 id="2-1-2-计算单元的叶绿素荧光"><a href="#2-1-2-计算单元的叶绿素荧光" class="headerlink" title="2.1.2 计算单元的叶绿素荧光"></a>2.1.2 计算单元的叶绿素荧光</h3><p>结合方程(1),(2),(5)-(7)可以得到单层$L(x)$释放的叶绿素荧光为：</p>
+<script type="math/tex; mode=display">
+df(x) = \Phi (\lambda _{em}, \lambda _{ex})\frac{i_0t_{12}(r_{21}\tau(1)\frac{d\tau}{dx}(1-x)-\frac{d\tau}{dx}(x)}{1-r^2_{21}\tau(1)^2}
+\tag{9}</script><p>为了计算整个单元的荧光发射，我们首先必须考虑界面的内部反射，并评估内部介质对发射通量的重吸收，然后对整个单元上$x$在0和1之间变化的结果进行积分。同样，可以使用发射通量网络来建立描述荧光再吸收的联立方程来解决这个问题(图2):</p>
+<!-- ![图2](image2.png) -->
+<div align="center">
+    <img src="https://raw.githubusercontent.com/zhaohuilifr/Picshub/main/images/fluorMODleaf/image2.png" alt="图2" width="50%">
+    <p>图2</p>
+</div>
+
+<script type="math/tex; mode=display">
+\begin{equation}
+\left\{
+\begin{aligned}
+df_u &= t_{f21}df_{u1}, \\
+df_{u1} &= \frac{1}{2}\tau_f(x)df(x) + \tau_f(1)df_{u2}, \\
+df_{u2} &= r_{f21}df_{d2}, \\
+df_{d1} &= r_{f21}df_{u1}, \\
+df_{d2} &= \frac{1}{2}\tau_f(1-x)df(x) + \tau_f(1)df_{d1}, \\
+df_d &= t_{f21}df_{d2}.
+\end{aligned}
+\right.
+\tag{10}
+\end{equation}</script><p>其中，下标$f$表示涉及荧光发射波长$\lambda<em>{em}$。<br>由于荧光是一种各向同性光源，发射的光子在向上和向下方向均匀分布，并且透射率函数$\tau_f(x)$通过简单地在$\tau(x)$中（方程(5)）将$k$替换为$k_f$得到。由此，解方程(10)可得无限小的层$L(x)$的上行和下行荧光通量$df</em>{u}$和$df_{d}$分别为：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\left\{
+\begin{aligned}
+df_u &= \frac{t_{f21}df(x)(r_{f21}\tau_f(1)\tau_f(1-x) + \tau_f(x))}{2(1-r^2_{f21}\tau_f(1)^2)} \\
+df_d &= \frac{t_{f21}df(x)(\tau_f(1-x) + r_{f21}\tau_f(1)\tau_f(x))}{2(1-r^2_{f21}\tau_f(1)^2)}
+\end{aligned}
+\right.
+\tag{11}
+\end{equation}</script><p>对$df<em>{u}$和$df</em>{d}$从$x=0$到$x=1$进行积分，可得到整个单元的上行和下行荧光信号$F_u(1)$和$F_d(1)$为：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\left\{
+\begin{aligned}
+F_u(1) &= \int_0^1df_u \\
+F_d(1) &= \int_0^1df_d
+\end{aligned}
+\right.
+\tag{12}
+\end{equation}</script><p>这些表达式无法通过解析方式进行积分，因此本文对一系列k和kf值进行了数值积分，以构建查找表并加快计算速度。</p>
+<h3 id="2-2-计算叶片（N个单元）的叶绿素荧光"><a href="#2-2-计算叶片（N个单元）的叶绿素荧光" class="headerlink" title="2.2 计算叶片（N个单元）的叶绿素荧光"></a>2.2 计算叶片（N个单元）的叶绿素荧光</h3><p>现在假设有一堆N个均匀的荧光单元，由强度为$i<em>0$的<strong>各向异性</strong>入射光束照射，该光束内接在由其半角$\alpha$定义的锥体中。输出变量$R</em>\alpha(N)$和$T<em>\alpha(N)$为整个叶片的在激发波长为$\lambda</em>{ex}$入射光条件下的反射率和透射率。相似地，我们可以定义$F<em>u(N)$和$F_d(N)$分别为叶片在释放波长$\lambda</em>{em}$处的上行和下行表观荧光产率。如果我们在N个单元的底部添加一个新的单元（第N+1），叶片的反射率和透射率将变为$R<em>\alpha(N+1)$和$T</em>\alpha(N+1)$。我们可以通过图3所示的通量网络和以下方程将新系统（N+1单元）与之前的系统（N单元）联系起来：</p>
+<!-- ![图3](image3.png) -->
+<div align="center">
+    <img src="https://raw.githubusercontent.com/zhaohuilifr/Picshub/main/images/fluorMODleaf/image3.png" alt="图3" width="50%">
+    <p>图3</p>
+</div>
+
+<script type="math/tex; mode=display">
+\begin{equation}
+\left\{
+\begin{aligned}
+
+i_1 &= T_a(N)i_0 + R(N)j_1 \\
+j_1 &= R(1)i_1 \\
+k_1 &= F_d(N)i_0 + F_u(N)j_1 + R_f(N)l_1 \\
+l_1 &= F_u(1)i_1 + R_f(1)k_1 \\
+\\
+i_2 &= T(1)i_1 = Ti_0 \\
+j_2 &= R_a(N)i_0 + T(N)j_1 = Ri_0 \\
+k_2 &= F_d(1)i_1 + T_f(1)k_1 = F_d(N+1)i_0 \\
+l_2 &= F_u(N)i_0 + F_d(N)j_1 + T_f(N)l_1 = F_u(N)i_0
+
+\end{aligned}
+\right.
+\tag{13}
+\end{equation}</script><p>其中，$R<em>f(N)$和$T_f(N)$分别是N个单元在释放波长$\lambda</em>{em}$处的反射率和透射率。解方程（13）可得N+1个单元的上行和下行荧光产率$F_u(N+1)$和$F_d(N+1)$：</p>
+<script type="math/tex; mode=display">
+F_u(N+1) = F_u(N) + \frac{F_d(N)T_a(N)R_{90}(1)}{1-R_{90}(N)R_{90}(1)}+\frac{F_d(N)T_f(N)R_{f}(1)}{1-R_{f}(N)R_{f}(1)} + \frac{T_f(N)T_a(N)(F_u(1)+F_u(N)R_f(1)R_{90}(1))}{(1-R_{90}(N)R_{90}(1))(1-R_{f}(N)R_{f}(1))}
+\tag{14}</script><script type="math/tex; mode=display">
+F_d(N+1) = \frac{F_d(1)T_a(N)}{1-R_{90}(N)R_{90}(1)}+\frac{F_d(N)T_f(1)}{1-R_{f}(N)R_{f}(1)} + \frac{T_f(1)T_a(N)(F_u(1)R_f(N)+F_u(N)R_{90}(1))}{(1-R_{90}(N)R_{90}(1))(1-R_{f}(N)R_{f}(1))}
+\tag{15}</script><p>由方程（12）可以计算得到$F_u(1)$和$F_d(1)$。因此，根据方程（14）和（15）递归可得$F_u(N)$和$F_d(N)$。</p>
+<h3 id="2-3-荧光产率模型"><a href="#2-3-荧光产率模型" class="headerlink" title="2.3 荧光产率模型"></a>2.3 荧光产率模型</h3><p>在方程(1)中，我们介绍了光谱荧光产率（spectral fluorescence yield, SFY）$\Phi(\lambda <em>{ex}, \lambda </em>{em})$。在单个荧光团情况下，它可以表达为：</p>
+<script type="math/tex; mode=display">
+\Phi(\lambda _{ex}, \lambda _{em}) = \xi(\lambda_{ex})Q\eta(\lambda_{em})
+\tag{16}</script><p>其中，$\xi(\lambda<em>{ex})$是<strong>荧光激发效率</strong>，Q是<strong>荧光量子产率</strong>，$\eta(\lambda</em>{em})$是归一化为1的<strong>荧光发射光谱</strong>，因此$\int<em>0^\infty\eta(\lambda</em>{em})d\lambda_{em} = 1$。<br>在植物叶片等光合系统中，红色荧光仅由叶绿素a产生，但众所周知，其他色素-蛋白质复合物也参与了具有不同光谱和效率特征的荧光发射。与光系统I（PSI）和II（PSII）相关的叶绿素是植物叶片的两个主要荧光团。类胡萝卜素在叶绿素的光吸收和部分能量转移中也起着至关重要的作用。因此，研究将源函数分为两个项，每个项对应一个光系统，并将方程（16）重写为：</p>
+<script type="math/tex; mode=display">
+\Phi(\lambda _{ex}, \lambda _{em}) = \sigma_I\xi_I(\lambda_{ex})Q_I\eta_I(\lambda_{em}) + \sigma_{II}\xi_{II}(\lambda_{ex})Q_{II}\eta_{II}(\lambda_{em})
+\tag{17}</script><p>其中，下标$I$和$II$分别表示光系统I和光系统II。$\sigma<em>I$和$\sigma</em>{II}$是<br>PSI和PSII的相对吸收截面（relative absorption cross section）计量因子，满足$\sigma<em>I + \sigma</em>{II} = 1$的关系。这些参数因植物种类、生长光强度和质量而异。</p>
+<h4 id="2-3-1-荧光激发效率"><a href="#2-3-1-荧光激发效率" class="headerlink" title="2.3.1 荧光激发效率"></a>2.3.1 荧光激发效率</h4><p>荧光激发效率$\xi(\lambda<em>{ex})$是在方程式（2）中已经量化的所有吸收光子中，被叶绿素a吸收或转移到叶绿素a的光子比例（可以理解为微观尺度的fAPAR）。如果我们假设使用具有均匀通量强度$I_0(λ</em>{ex})$的准直光束照射基本叶层，其荧光为:</p>
+<script type="math/tex; mode=display">
+f(\lambda_{ex}, \lambda_{em}) = I_0(\lambda_{ex})k(\lambda_{ex})(\sigma_I\xi_I(\lambda_{ex})Q_I\eta_I(\lambda_{em}) + \sigma_{II}\xi_{II}(\lambda_{ex})Q_{II}\eta_{II}(\lambda_{em}))
+\tag{18}</script><p>其中，$k(\lambda_{ex})$为PROSPECT中的吸收系数。由此，PSI和PSII的荧光激发效率可以表示为：</p>
+<script type="math/tex; mode=display">
+\xi_I(\lambda_{ex}) = \frac{\Chi_{I}(\lambda_{ex})}{k(\lambda_{ex})}
+\tag{19}</script><script type="math/tex; mode=display">
+\xi_{II}(\lambda_{ex}) = \frac{\Chi_{II}(\lambda_{ex})}{k(\lambda_{ex})}
+\tag{20}</script><p>其中，$\Chi<em>{I}(\lambda</em>{ex})$和$\Chi<em>{II}(\lambda</em>{ex})$分别是光系统I和II的荧光色素吸收的光子数。在这种情况下，荧光直接与$\Chi<em>{I}(\lambda</em>{ex})$和$\Chi<em>{II}(\lambda</em>{ex})$相关：</p>
+<script type="math/tex; mode=display">
+f(\lambda_{ex}, \lambda_{em}) = I_0(\lambda_{ex})k(\lambda_{ex})(\sigma_I\Chi_I(\lambda_{ex})Q_I\eta_I(\lambda_{em}) + \sigma_{II}\Chi_{II}(\lambda_{ex})Q_{II}\eta_{II}(\lambda_{em}))
+\tag{21}</script><p>这里，$\Chi<em>{I}(\lambda</em>{ex})$和$\Chi<em>{II}(\lambda</em>{ex})$由观测实验获得，即使用PSI和PSII的稀释溶液，通过选择$（σ<em>I，σ</em>{II}）=（1，0）$（纯PSI）或$（σ<em>I，σ</em>{Ⅱ}）=（0，1）$（纯PSII），并通过改变激发波长同时将发射波长固定在740 nm（再吸收非常低），测量了相对激发光谱$\Chi<em>{I}(\lambda</em>{ex})$和$\Chi<em>{II}(\lambda</em>{ex})$。然后对它们进行归一化，使它们在660 nm主吸收峰附近的值与PROSPECT-5提供的叶绿素比吸收系数$k<em>{ab}(λ</em>{ex})$处于同一水平。<br>图4展示了归一化的PSI和PSII的激发光谱，以及归一化的类囊体激发光谱（Thylakoids）和$k<em>{ab}(λ</em>{ex})$光谱。</p>
+<!-- ![图4](image4.png) -->
+<div align="center">
+    <img src="https://raw.githubusercontent.com/zhaohuilifr/Picshub/main/images/fluorMODleaf/image4.png" alt="图4" width="50%">
+    <p>图4</p>
+</div>
+
+<p>一方面，已有研究证明，类囊体光谱不能像预期的那样被视为测量的PSI和PSII激发光谱的组合。而且，700 nm处的PSI激发光谱通常高于PSII激发光谱（Franck等人，2002）。另一方面，如图4所示，类囊体荧光激发光谱$\Chi<em>{thy}(\lambda</em>{ex})$与$k<em>{ab}(λ</em>{ex})$看起来十分相似。因此，研究将$\Chi<em>{thy}(\lambda</em>{ex})$用作两个光系统（PSI和PSII）的激发光谱，这样，通过结合方程（17）和（20），源函数变为：</p>
+<script type="math/tex; mode=display">
+\Phi(\lambda _{ex}, \lambda _{em}) = \frac{\Chi_{thy}(\lambda_{ex})}{k(\lambda_{ex})}(\sigma_IQ_I\eta_I(\lambda_{em}) + \sigma_{II}Q_{II}\eta_{II}(\lambda_{em}))
+\tag{22}</script><h4 id="2-3-2-荧光量子产率"><a href="#2-3-2-荧光量子产率" class="headerlink" title="2.3.2 荧光量子产率"></a>2.3.2 荧光量子产率</h4><p>在被叶绿素a吸收的所有光子中，一小部分（称为荧光量子产率Q）被以荧光形式重新释放。研究提出利用相对荧光寿命来表示Q。荧光寿命$\tau$定义为分子在发射光子之前保持激发态的平均时间。<br>Q和$\tau$由关系式$Q=\frac{\tau}{\tau<em>0}$联系起来，其中$\tau_0$是叶绿素a的天然荧光寿命，当荧光是唯一的去激发途径时。无论参与PSI还是PSII，自然寿命$\tau_0$都是这种色素的固有特性。它是通过吸收曲线的积分计算出来的，大约等于15ns（Brody和Rabinowitch，1957）。长期以来，实验分离的PSI复合物的荧光寿命（$\tau_I$）一直被认为非常短：发现约为0.03 ns（Borisov&amp;Il’ina，1973）和0.1 ns（Schmuck&amp;Moya，1994；Agati等人，2000）。$\tau_I$的微弱变化支撑了一个假设，即与PSII不同，PSI荧光不随光化学变化而变化。实验测定的PSII的荧光寿命$\tau</em>{II}$远高于$\tau<em>I$，且长期以来，在大多数实验条件下，平均荧光寿命$\tau</em>{II}$几乎与$Q<em>{II}$呈线性关系。因此，量子产率$Q</em>{II}$也可以用简单的关系$Q<em>{II}=\frac{\tau</em>{II}}{\tau_{0}}$来建模。</p>
+<p><strong>研究设置$\tau<em>I = 0.035$作为PSI荧光寿命的标准值，$\tau</em>{II} = 0.5$作为PSII荧光寿命的标准值。</strong></p>
+<script type="math/tex; mode=display">
+\begin{equation}
+\left\{
+\begin{aligned}
+Q_{I}&=\frac{\tau_{I}}{\tau_0} = \frac{0.035}{15} = 0.23\% \\
+Q_{II}&=\frac{\tau_{II}}{\tau_0} = \frac{0.5}{15} = 3.3\%
+\end{aligned}
+\right.
+\tag{23}
+\end{equation}</script><h4 id="2-3-3-荧光发射光谱"><a href="#2-3-3-荧光发射光谱" class="headerlink" title="2.3.3 荧光发射光谱"></a>2.3.3 荧光发射光谱</h4><p>图5为FluorMODleaf模型中使用的天然PSI和PSII荧光发射光谱（归一化后的），该光谱由实验观测得到。</p>
+<!-- ![图5](image5.png) -->
+<div align="center">
+    <img src="https://raw.githubusercontent.com/zhaohuilifr/Picshub/main/images/fluorMODleaf/image5.png" alt="图5" width="30%">
+    <p>图5</p>
+</div>
+
+
+<h4 id="2-3-4-荧光产率源函数"><a href="#2-3-4-荧光产率源函数" class="headerlink" title="2.3.4 荧光产率源函数"></a>2.3.4 荧光产率源函数</h4><p>结合方程（22）和（23），可以得到荧光产率源函数的如下：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+% \left\{
+\begin{aligned}
+\Phi(\lambda _{ex}, \lambda _{em}) &= \frac{\Chi_{thy}(\lambda_{ex})}{\tau_0k(\lambda_{ex})}(\sigma_I\tau_I\eta_I(\lambda_{em}) + \sigma_{II}\tau_{II}\eta_{II}(\lambda_{em})) \\
+&=\frac{\Chi_{thy}(\lambda_{ex})}{k(\lambda_{ex})}(0.0035\times \sigma_I\eta_I(\lambda_{em}) + 0.5\times \sigma_{II}\eta_{II}(\lambda_{em}))
+\end{aligned}
+% \right.
+\tag{24}
+\end{equation}</script><h2 id="3-总结"><a href="#3-总结" class="headerlink" title="3. 总结"></a>3. 总结</h2><p>fluorMODleaf模型在PROSPECT模型的基础上加入了与荧光有关的参数（$\sigma<em>{II}/\sigma</em>{I}$、$\tau<em>{I}$和$\tau</em>{II}$），参数简单易获取。该模型基于辐射传输理论，模拟了荧光的多次散射和再发射过程，实现不同种类<strong>叶片</strong>的<strong>半球反射率和透射率</strong>以及<strong>叶绿素荧光</strong>的精确模拟。将其与冠层辐射传输理论结合，进而可实现冠层尺度叶绿素总释放荧光$SIF<em>{total}$、冠层顶部设备观测叶绿素荧光$SIF</em>{obs}$以及冠层逃逸概率$f_{esc}$等模拟。<br>Fluspec模型是另一种经典的叶片尺度辐射传输模型，但是在建模方法、参数输入和应用目的上与fluorMODleaf模型存在一些区别。Fluspec模型使用荧光发射矩阵（<strong>EF-matrices</strong>）对不同波段荧光进行模拟，对荧光在叶片内部的叶绿素荧光的方向性及辐射传输过程进行了简化处理。目前，SCOPE模型已将Fluspec模型集成，实现了冠层尺度的叶绿素荧光模拟。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://zhaohuilifr.github.io">Rhine</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://zhaohuilifr.github.io/post/a600d4c3.html">http://zhaohuilifr.github.io/post/a600d4c3.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://zhaohuilifr.github.io" target="_blank">Les aventures du Rhine en France</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/model/">model</a><a class="post-meta__tags" href="/tags/radiative-transfer/">radiative transfer</a></div><div class="post_share"><div class="social-share" data-image="/img/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/post/d99da792.html" title="SCOPE的模型各组分介绍"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SCOPE的模型各组分介绍</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/2e8286cb.html" title="1-CASTANEA模型组成"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-05</div><div class="title">1-CASTANEA模型组成</div></div></a></div><div><a href="/post/81eea2a8.html" title="2-CASTANEA层级结构"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-06</div><div class="title">2-CASTANEA层级结构</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Rhine</div><div class="author-info__description">Rhine's Blog</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FluorMODleaf%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">FluorMODleaf模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%A8%A1%E5%9E%8B%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">2. 模型原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E5%8D%95%E4%B8%AA%E5%8D%95%E5%85%83%E7%9A%84%E8%8D%A7%E5%85%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1 单个单元的荧光</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-1-%E8%AE%A1%E7%AE%97%E5%8D%95%E5%B1%82%E5%90%B8%E6%94%B6%E7%9A%84%E8%BE%90%E5%B0%84%E9%80%9A%E9%87%8F"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">2.1.1 计算单层吸收的辐射通量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-2-%E8%AE%A1%E7%AE%97%E5%8D%95%E5%85%83%E7%9A%84%E5%8F%B6%E7%BB%BF%E7%B4%A0%E8%8D%A7%E5%85%89"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.1.2 计算单元的叶绿素荧光</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E8%AE%A1%E7%AE%97%E5%8F%B6%E7%89%87%EF%BC%88N%E4%B8%AA%E5%8D%95%E5%85%83%EF%BC%89%E7%9A%84%E5%8F%B6%E7%BB%BF%E7%B4%A0%E8%8D%A7%E5%85%89"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.2 计算叶片（N个单元）的叶绿素荧光</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E8%8D%A7%E5%85%89%E4%BA%A7%E7%8E%87%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.4.</span> <span class="toc-text">2.3 荧光产率模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-1-%E8%8D%A7%E5%85%89%E6%BF%80%E5%8F%91%E6%95%88%E7%8E%87"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">2.3.1 荧光激发效率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-2-%E8%8D%A7%E5%85%89%E9%87%8F%E5%AD%90%E4%BA%A7%E7%8E%87"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">2.3.2 荧光量子产率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-3-%E8%8D%A7%E5%85%89%E5%8F%91%E5%B0%84%E5%85%89%E8%B0%B1"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">2.3.3 荧光发射光谱</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-4-%E8%8D%A7%E5%85%89%E4%BA%A7%E7%8E%87%E6%BA%90%E5%87%BD%E6%95%B0"><span class="toc-number">1.2.4.4.</span> <span class="toc-text">2.3.4 荧光产率源函数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%80%BB%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">3. 总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/a600d4c3.html" title="fluorMODleaf模型辐射传输理论介绍">fluorMODleaf模型辐射传输理论介绍</a><time datetime="2025-04-08T15:55:55.000Z" title="发表于 2025-04-08 17:55:55">2025-04-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/d99da792.html" title="SCOPE的模型各组分介绍">SCOPE的模型各组分介绍</a><time datetime="2024-12-18T13:12:25.000Z" title="发表于 2024-12-18 14:12:25">2024-12-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/6932cc.html" title="FloX数据处理程序使用教程">FloX数据处理程序使用教程</a><time datetime="2024-12-13T10:35:45.000Z" title="发表于 2024-12-13 11:35:45">2024-12-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/undefined.html" title="richness">richness</a><time datetime="2024-12-11T11:58:36.000Z" title="发表于 2024-12-11 12:58:36">2024-12-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/81eea2a8.html" title="2-CASTANEA层级结构">2-CASTANEA层级结构</a><time datetime="2024-12-05T23:00:00.000Z" title="发表于 2024-12-06 00:00:00">2024-12-06</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/banner.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Rhine</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

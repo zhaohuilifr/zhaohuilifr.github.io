@@ -1,0 +1,259 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Les aventures du Rhine en France - Remote Sensing、Ecology、Modeling...</title><meta name="author" content="Rhine"><meta name="copyright" content="Rhine"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Rhine&#39;s Blog">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Les aventures du Rhine en France">
+<meta property="og:url" content="http://zhaohuilifr.github.io/index.html">
+<meta property="og:site_name" content="Les aventures du Rhine en France">
+<meta property="og:description" content="Rhine&#39;s Blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://zhaohuilifr.github.io/img/avatar.jpg">
+<meta property="article:author" content="Rhine">
+<meta property="article:tag" content="定量遥感&#x2F;叶绿素荧光&#x2F;森林生态系统&#x2F;生态过程模型">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://zhaohuilifr.github.io/img/avatar.jpg"><link rel="shortcut icon" href="/img/logo_site.jpeg"><link rel="canonical" href="http://zhaohuilifr.github.io/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Les aventures du Rhine en France',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2025-04-08 23:14:09'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/food/"><i class="fa-fw fas fa-utensils"></i><span> 美食</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/banner.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Les aventures du Rhine en France"><img class="site-icon" src="/img/logo_site.jpeg"/><span class="site-name">Les aventures du Rhine en France</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/books/"><i class="fa-fw fas fa-book"></i><span> 书籍</span></a></li><li><a class="site-page child" href="/travel/"><i class="fa-fw fas fa-plane"></i><span> 旅行</span></a></li><li><a class="site-page child" href="/food/"><i class="fa-fw fas fa-utensils"></i><span> 美食</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Les aventures du Rhine en France</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/post/a600d4c3.html" title="fluorMODleaf模型辐射传输理论介绍">fluorMODleaf模型辐射传输理论介绍</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2025-04-08T15:55:55.000Z" title="发表于 2025-04-08 17:55:55">2025-04-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MODEL/">MODEL</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MODEL/fluorMODleaf/">fluorMODleaf</a></span></div><div class="content">FluorMODleaf模型
+本文主要参考文献为：
+
+Pedros R,Goulas Y,Jacquemoud S,Louis J, Moya I (2010) FluorMODleaf:A new leaf fluorescence emission model based on the PROSPECT model.Remote Sens.Environ.114:155-167. doi:10.1016/j.rse.2009.08.019.
+Pedros R,Moya I,Goulas Y,Jacquemoud S (2008) Chlorophyll fluorescence emission spectrum inside a leaf.Photochemical&amp; Photobiological Sciences 7:498-502. doi: 10.1039/b719506k.
+
+
+1. 简介FluorMODleaf是一个常用的基于PROSPECT模型的叶片尺度叶绿素荧光模拟模型。FluorMODleaf主要用于模拟植物叶片反射率、透射率以及上行和下行叶绿素荧光。模 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/post/d99da792.html" title="SCOPE的模型各组分介绍">SCOPE的模型各组分介绍</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-18T13:12:25.000Z" title="发表于 2024-12-18 14:12:25">2024-12-18</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MODEL/">MODEL</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MODEL/SCOPE/">SCOPE</a></span></div><div class="content">SCOPE模型
+Soil Canopy Observation, Photochemistry and Energy fluxes (SCOPE, Van der Tol at al., 2009, Yang et al., 2020) radiative transfer model.
+本文主要介绍SCOPE模型，官方文档参考在这里，Matlab代码链接在这里，主要参考文献如下：
+
+SCOPE2.0
+Yang, P., Prikaziuk, E., Verhoef, W., and Van der Tol, C. 2021 “SCOPE 2.0: a model to simulate vegetated land surface fluxes and satellite signals” Geoscientific Model Development, 14, 4697–4712, https://doi.org/10.5194/gmd-14-4697-2021
+mSCOPE: 在SCOPE基础上，新增了对冠层垂直结构的模拟。
+Yang P, Verhoef W, van der  ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/post/6932cc.html" title="FloX数据处理程序使用教程">FloX数据处理程序使用教程</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-13T10:35:45.000Z" title="发表于 2024-12-13 11:35:45">2024-12-13</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/SIF/">SIF</a></span></div><div class="content">FloX数据处理程序使用教程1. R安装（推荐默认位置安装，全英文路径）R语言是一种开源语言与操作环境，主要用于统计分析、绘图以及数据挖掘。
+打开R语言官网 https://www.r-project.org/
+
+点击CRAN，选择国内镜像
+
+任意选择其中一个镜像，进入，根据电脑系统类型选择对应版本，这里以Windows系统为例：
+
+首次安装R，选择base
+
+点击Download R-4.2.0 for Windows下载，然后开始安装即可。
+
+选择默认安装路径安装：
+
+
+2. RStudio安装R是RStudio的基础，需先安装R再安装RStudio。
+打开RStudio官网 https://www.rstudio.com/ ，点击 ProductsRStudio
+
+选择RStudio Desktop
+
+选择RStudio Desktop Free版本
+
+选择Windows版本下载，然后安装即可。
+
+3. RTools安装（推荐默认位置安装，全英文路径）Windows系统的R默认没有安装RTools，因此需要手动安装。
+3.1 在线方式在RStudio中输入 install.pa ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/post/undefined.html" title="richness">richness</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-11T11:58:36.000Z" title="发表于 2024-12-11 12:58:36">2024-12-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Others/">Others</a></span></div><div class="content">本博客页面美化过程记录主要参考：
+https://haiyong.site/post/22e1d5da.html
+1 页面美化footer背景修改主题配置文件 _config.butterfly.yml
+12# footer是否显示图片背景（与top_img一致）footer_bg: true
+效果如下：
+
+2 文章分类和标签在 Front-matter 中设置。在其他系统中，分类和标签听起来很接近，但是在 Hexo 中两者有着明显的差别：分类具有顺序性和层次性，也就是说 Foo, Bar 不等于 Bar, Foo；而标签没有顺序和层次。
+Front-matter在文章的最开头，使用---与正文分隔。
+12345categories:- Diarytags:- PS3- Games
+如果需要为文章添加多个分类，可以使用list方法：
+1234categories:- [Diary, PlayStation]- [Diary, Games]- [Life]
+此时这篇文章同时包括三个分类： PlayStation 和 Games 分别都是父分类 Diary 的子分类，同时 Life 是一个 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/post/81eea2a8.html" title="2-CASTANEA层级结构">2-CASTANEA层级结构</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-05T23:00:00.000Z" title="发表于 2024-12-06 00:00:00">2024-12-06</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MODEL/">MODEL</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MODEL/CASTANEA/">CASTANEA</a></span></div><div class="content">2-CASTANEA的层级结构Read inputs and initialization
+1)read_ini : ini file (species)
+2)Initglobal
+Each year :
+1) read_parcelle (stand informations – LAI, leaf N, age)
+2) init_CheneSessile
+3) initannuelle
+4) initgeo (site)
+Each day :
+1) initjour
+2) choix_georad (leaf, trunk, soil optical radiative properties)
+3) calc_LIDF
+Each hour (or minute or seconds) :
+1) meteoglobal (daylength)
+2) meteohoraire
+3) calc_skyl (%diffuse radiation)
+4) coef_rayonnement (radiative balance, absorbed radiation, reflectance, ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/post/2e8286cb.html" title="1-CASTANEA模型组成">1-CASTANEA模型组成</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-12-04T23:00:00.000Z" title="发表于 2024-12-05 00:00:00">2024-12-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MODEL/">MODEL</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/MODEL/CASTANEA/">CASTANEA</a></span></div><div class="content">1 CASTANEA模型组成文件夹内容
+Data: 输入数据集
+flux：通量数据
+meteo: 气象数据参数
+peuplement: 森林的standce数据，包括LAI，age，
+
+
+ini: 模型输入数据集初始化参数设置（模型使用哪些Data中的数据文件）
+BAR_2006_2022_RU390_V5_2.ini
+
+
+projet_fortran_ifx_Castanea(IFX): CASTANEA主体程序
+projet_make_castanea_out(IFORT): CASTANEA模型输出参数设置
+job.txt: ini参数设置（模型选用哪个ini中的文件设置，fin表示end，表示模型使用fin上面的.ini文件作为模型输入初始化参数设置）
+BAR_2006_2022_RU390_V5_2.inifin
+
+
+
+
+文件组成CASTANEA工程文件包括两个部分：
+
+
+projet_fortran_ifx_Castanea(IFX)： CASTANEA主体程序，包含
+资源文件（公用变量的声明、含义等）
+主体代码文件，其中Perso文件夹中为模型变量输出代码，将模型输出写成 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/post/4a17b156.html" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2024-08-19T13:11:23.523Z" title="发表于 2024-08-19 15:11:23">2024-08-19</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+More info: Writing
+Run server1$ hexo server
+More info: Server
+Generate static files1$ hexo generate
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+More info: Deployment
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Rhine</div><div class="author-info__description">Rhine's Blog</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/a600d4c3.html" title="fluorMODleaf模型辐射传输理论介绍">fluorMODleaf模型辐射传输理论介绍</a><time datetime="2025-04-08T15:55:55.000Z" title="发表于 2025-04-08 17:55:55">2025-04-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/d99da792.html" title="SCOPE的模型各组分介绍">SCOPE的模型各组分介绍</a><time datetime="2024-12-18T13:12:25.000Z" title="发表于 2024-12-18 14:12:25">2024-12-18</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/6932cc.html" title="FloX数据处理程序使用教程">FloX数据处理程序使用教程</a><time datetime="2024-12-13T10:35:45.000Z" title="发表于 2024-12-13 11:35:45">2024-12-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/undefined.html" title="richness">richness</a><time datetime="2024-12-11T11:58:36.000Z" title="发表于 2024-12-11 12:58:36">2024-12-11</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/post/81eea2a8.html" title="2-CASTANEA层级结构">2-CASTANEA层级结构</a><time datetime="2024-12-05T23:00:00.000Z" title="发表于 2024-12-06 00:00:00">2024-12-06</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/MODEL/"><span class="card-category-list-name">MODEL</span><span class="card-category-list-count">4</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/MODEL/CASTANEA/"><span class="card-category-list-name">CASTANEA</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/MODEL/SCOPE/"><span class="card-category-list-name">SCOPE</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/MODEL/fluorMODleaf/"><span class="card-category-list-name">fluorMODleaf</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/Others/"><span class="card-category-list-name">Others</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/SIF/"><span class="card-category-list-name">SIF</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/radiative-transfer/" style="font-size: 1.1em; color: #999">radiative transfer</a> <a href="/tags/scope/" style="font-size: 1.1em; color: #999">scope</a> <a href="/tags/model/" style="font-size: 1.5em; color: #99a9bf">model</a> <a href="/tags/flox/" style="font-size: 1.1em; color: #999">flox</a> <a href="/tags/others/" style="font-size: 1.1em; color: #999">others</a> <a href="/tags/notebook/" style="font-size: 1.3em; color: #99a1ac">notebook</a> <a href="/tags/RTM/" style="font-size: 1.1em; color: #999">RTM</a> <a href="/tags/sif/" style="font-size: 1.3em; color: #99a1ac">sif</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/04/"><span class="card-archive-list-date">四月 2025</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/12/"><span class="card-archive-list-date">十二月 2024</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">八月 2024</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">7</div></div><div class="webinfo-item"><div class="item-name">已运行时间 :</div><div class="item-count" id="runtimeshow" data-publishDate="2024-08-03T22:00:00.000Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-04-08T21:14:09.743Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/banner.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2025 By Rhine</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
