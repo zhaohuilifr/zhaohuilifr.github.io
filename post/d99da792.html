@@ -356,7 +356,7 @@
 </ul>
 <p>入射光的直射分量对反射光的方向分量和半球分量都有影响，入射光的散射分量也会对反射光的方向和半球分量产生影响。</p>
 <p><img src="https://scope-model.readthedocs.io/en/master/_images/reflectance_factors.png" alt="table2_relation of incoming and reflected radiance"></p>
-<p>（<em>图源：Schaepman-Strub et al. <a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/abs/pii/S0034425706001167?via%3Dihub">2006</a></em>）</p>
+<p>（_图源：Schaepman-Strub et al. <a target="_blank" rel="noopener" href="https://www.sciencedirect.com/science/article/abs/pii/S0034425706001167?via%3Dihub">2006</a>_）</p>
 <blockquote>
 <p>:exclamation:<strong>注意</strong></p>
 <p>Bidirectional Reflectance Distribution Function (BRDF) 是描述一种材料（material）的双向反射特征的函数。</p>
@@ -383,7 +383,7 @@
 <p>当观测方向与光照方向重合时，热点现象就会发生。事实上，在这个例子中，太阳天顶角为30°。</p>
 <p>680和760nm波段的BRDF和荧光图如下所示：</p>
 <p><img src="https://scope-model.readthedocs.io/en/master/_images/BRDF.png" alt="BRDF"></p>
-<p>(<em>图源：Peiqi Yang</em>)</p>
+<p>(_图源：Peiqi Yang_)</p>
 <h2 id="6-时间序列Time-series"><a href="#6-时间序列Time-series" class="headerlink" title="6. 时间序列Time series"></a>6. 时间序列Time series</h2><font color = 'red'>**`options.simulation==1`**</font> 
 
 <h3 id="6-1-定义"><a href="#6-1-定义" class="headerlink" title="6.1 定义"></a>6.1 定义</h3><p>与时间一起记录的一组变量。</p>
@@ -391,7 +391,7 @@
 <p>以berkeley格式提供 <code>startDOY</code> 和 <code>endDOY</code> 作为时间戳：（自 2015 年起的 FLUXNET 标准）- YYYYMMDD[HHMMSS]。从“./input/dataset X”中的文件读取的数据将成为 startDOY、endDOY 的子集。</p>
 <p>SCOPE 将对数据中的每个时间戳进行运行。 可以对测量频率低于气象数据的变量进行插值（vegetation_retrieved_csv）。 通过添加时间戳列，可从检索输出的 “Output “表中创建该文件。</p>
 <p><img src="https://scope-model.readthedocs.io/en/master/_images/ts.png" alt=""></p>
-<p><em>从”./input/dataset for_verification “运行时间序列的结果。 每个点 - 单次 SCOPE 运行。 左栏—输入，右栏—来自 fluxes.csv 的输出。 蓝色—标准 “验证数据 “数据集，红色—对 Vcmax 和 Cab 值进行插值的数据集。 如图所示，标准数据的 Cab=80 和插值后 Cab 随时间变化（从 37.7 到 39.2）。</em></p>
+<p>_从”./input/dataset for_verification “运行时间序列的结果。 每个点 - 单次 SCOPE 运行。 左栏—输入，右栏—来自 fluxes.csv 的输出。 蓝色—标准 “验证数据 “数据集，红色—对 Vcmax 和 Cab 值进行插值的数据集。 如图所示，标准数据的 Cab=80 和插值后 Cab 随时间变化（从 37.7 到 39.2）。_</p>
 <blockquote>
 <p>:exclamation:注意</p>
 <p>有时时间序列会在输出中产生 Inf、-Inf、NaN 以及能量平衡闭合错误或警告。我们建议检查每个时间步骤的能量平衡闭合。</p>
